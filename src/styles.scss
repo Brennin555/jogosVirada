@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+.centralizar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cabecalho {
+  width: 100%;
+  margin-left: -10px;
+  margin-top: -10px;
+  padding: 12px 20px;
+  background-color: #003b17;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+}

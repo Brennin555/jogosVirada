@@ -1,0 +1,75 @@
+<h2 class="subtitulo">Números da Virada:</h2>
+<p class="texto">
+	Clique nos números da Mega da Virada (separar por virgula)
+</p>
+<table class="tabela">
+	<tbody>
+		<tr *ngFor="let linha of numeros">
+			<td *ngFor="let num of linha"
+				class="numeroCartela">
+        <button *ngIf="!this.resultado.includes(num)" (click)="trocarNumero(num)" class="botaoNumero">
+          {{ num }}
+        </button>
+        <button *ngIf="this.resultado.includes(num)" (click)="trocarNumero(num)" class="botaoNumero selecionado">
+          {{ num }}
+        </button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2 class="subtitulo">Meus Jogos:</h2>
+<p class="texto">
+	Digite seu jogo: (separar por virgula)
+</p>
+<input [(ngModel)]="jogoBruto"
+	type="text"
+	placeholder="Ex: 1, 2, 3, 4, 5, 6"
+	class="inputJogo">
+<div class="centralizar">
+	<button (click)="adicionarJogo()"
+		class="botaoAdicionar">
+		Adicionar Jogo
+	</button>
+</div>
+
+<p class="texto">
+	Digite seus jogo: (separar por colchetes)
+</p>
+<textarea [(ngModel)]="variosJogosBruto"
+	placeholder="Ex: [1, 2, 3, 4, 5, 6][11, 12, 13, 14, 15, 16]"
+	class="inputJogo"
+	rows="4"></textarea>
+<div class="centralizar">
+	<button (click)="adicionarVariosJogos()"
+		class="botaoAdicionar">
+		Adicionar Jogos
+	</button>
+</div>
+
+<div *ngFor="let jogo of jogos"
+	class="agrupar">
+	<table class="tabelaJogo">
+		<tbody>
+			<tr>
+				<td *ngFor="let linha of jogo">
+        <div *ngIf="!this.resultado.includes(linha)">
+          {{ linha }}
+        </div>
+        <div *ngIf="this.resultado.includes(linha)" class="selecionado">
+          {{ linha }}
+        </div>
+        </td>
+			</tr>
+		</tbody>
+	</table>
+	<button (click)="removerJogo(jogo)"
+		class="botaoRemover">
+		X
+	</button>
+</div>
+
+<div *ngFor="let e of erro"
+	class="containerErro">
+	<h3>{{ e }}</h3>
+</div>
