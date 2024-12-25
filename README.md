@@ -1,5 +1,8 @@
-# VireiRico
+# Virei(o ano)Rico
 
+Aplicação Web que verifica se algum dos seus jogos da Mega da Virada foi premiado. 
+
+----------------------------
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
 ## Development server
